@@ -16,6 +16,7 @@ const fakeData = () => {
 
 
 export const Card: (any: any) => any = ({ item, provided }) => {
+    
     return (
         <div
             className='layout-Item'
@@ -56,6 +57,7 @@ export const Card: (any: any) => any = ({ item, provided }) => {
 
 
 export class LayoutDemo extends React.Component<{}, {}> {
+   // dragactNode: Dragact;
     render() {
         const margin: [number, number] = [5, 5];
         const dragactInit = {
@@ -80,6 +82,7 @@ export class LayoutDemo extends React.Component<{}, {}> {
                     <Dragact
                         {...dragactInit}
                         placeholder={true}
+                        // ref={node => node ? this.dragactNode = node : null}
                         style={{
                             background: '#003A8C'
                         }}

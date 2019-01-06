@@ -252,7 +252,6 @@ export class Dragger extends React.Component<DraggerProps, {}> {
     onResizeStart = (event: React.MouseEvent<HTMLSpanElement>) => {
         /** 保证用户在移动元素的时候不会选择到元素内部的东西 */
         doc.body.style.userSelect = 'none'
-        console.log(event);
         doc.addEventListener('mouseup', this.onResizeEnd)
         doc.addEventListener('mousemove', this.onResizing)
 
@@ -266,7 +265,7 @@ export class Dragger extends React.Component<DraggerProps, {}> {
         this.setState({
             originX: originX,
             originY: originY,
-            zIndex: 2,
+            zIndex: 30,
             lastW: this.state.w,
             lastH: this.state.h
         })

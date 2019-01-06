@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        body{
+            font-size: 14px;
+            height: 100%;;
+        }
+        .layout-wapper{
+          
+            padding: 10px 10px 70px 10px;
+            margin: 0 auto;
+        }
+        .lists-wapper{
+            background: #fff;
+           border-radius: 5px;
+           padding: 10px;
+            box-shadow: 0px 0px 5px rgb(172, 170, 170);
+            margin-top: 30px;
+        }
+        .lists-wapper:first-child{
+            margin-top: 10px;
+        }
+        .list-header,.list-image,.list-desc,.list-footer{
+            padding: 10px 5px;
+        }
+        .list-header{
+            font-size: 16px;
+        }
+        .list-image img{
+            max-width: 100%;
+        }
+        .list-desc, .list-image{
+            padding: 5px;
+            color: #999;
+        }
+        .list-footer a{
+            text-decoration: none;
+            color: #030303
+        }
+        .tab-footer{
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+           background: #fff;
+            height: 55px;
+            width: 100%;
+            box-shadow: 0px -1px 3px rgb(207, 205, 205)
+        }
+        .tab-footer a{
+            text-decoration: none;
+            color: #030303;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            flex: 1;
+            border-right: 1px solid #f4f4f4;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-wapper">
+    <div class="lists-wapper">
+        <div class="list-header">这是标题</div>
+        <div class="list-image"><img src="http://i4.szhomeimg.com/n/2018/07/28/07281447191721316.JPG" alt=""></div>
+        <div class="list-desc">这里这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介这里是简介是简介</div>
+        <div class="list-footer">
+            <a href="#">阅读全文</a> 
+        </div>
+    </div>
+  
+                <a id="bottom"></a>
+    </div>
+    
+    <div class="tab-footer">
+        <a href="#">标题1</a>
+       
+        <a href="#">标题2</a>
+        
+        <a href="#">标题13</a>
+        
+    </div>
+
+
+
+    <script>
+    window.onload=function(){
+    
+       var ele= document.getElementById('bottom')
+
+       animateScroll(ele,1000)
+
+        function animateScroll(element,speed) {
+    let rect=element.getBoundingClientRect();
+    //获取元素相对窗口的top值，此处应加上窗口本身的偏移
+    let top=window.pageYOffset+rect.top;
+    let currentTop=0;
+    let requestId;
+    //采用requestAnimationFrame，平滑动画
+    function step(timestamp) {
+      currentTop+=speed;
+      if(currentTop<=top){
+        window.scrollTo(0,currentTop);
+        requestId=window.requestAnimationFrame(step);
+      }else{
+        window.cancelAnimationFrame(requestId);
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+
+
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
