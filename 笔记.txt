@@ -1,0 +1,4 @@
+1,通过组件的children属性，写一个构造函数，通过父组件的属性进行传递
+
+dragact.tst
+renderPlaceholder //这里是设置的阴影部分的渲染

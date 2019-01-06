@@ -1,0 +1,28 @@
+{
+    "presets": [
+        [
+            "es2015",
+            {
+                "modules": false
+            }
+        ],
+
+        "stage-2",
+
+        "react"
+    ],
+    "plugins": [
+        "transform-runtime",
+        "react-hot-loader/babel",
+        "transform-object-rest-spread",
+        "transform-react-jsx"
+    ],
+    "env": {
+        "development": {
+            "plugins": ["transform-es2015-modules-commonjs"]
+        },
+        "test": {
+            "plugins": ["transform-es2015-modules-commonjs"]
+        }
+    }
+}
